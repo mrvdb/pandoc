@@ -1257,7 +1257,7 @@ linkToInlinesF linkStr =
 cleanLinkString :: String -> Maybe String
 cleanLinkString s =
   case s of
-    '/':_                  -> Just $ "file://" ++ s  -- absolute path
+    '/':_                  -> Just s
     '.':'/':_              -> Just s                 -- relative path
     '.':'.':'/':_          -> Just s                 -- relative path
     -- Relative path or URL (file schema)
